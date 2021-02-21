@@ -9,11 +9,11 @@ export const GlobalStyle = createGlobalStyle`
     html, body {
         margin: 0;
         padding: 0;
-        
+        font-family: ${({ theme }) => theme.fontFamily};
+
         display: flex;
         min-height: 100vh;
-        width: 100%;        
-  color: ${({ theme }) => theme.colors.primary};
+        width: 100%;
     }
     #__next {
         flex: 1;
