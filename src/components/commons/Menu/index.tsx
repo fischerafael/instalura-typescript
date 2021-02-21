@@ -6,6 +6,8 @@ import { MenuWrapper } from './styles'
 import { menuLinks } from '../../../utils/menu-links'
 import Button from '../Button'
 
+import Text from '../../foundation/Text'
+
 const Menu = () => {
     return (
         <MenuWrapper>
@@ -15,7 +17,9 @@ const Menu = () => {
             <MenuWrapper.Center as="ul">
                 {menuLinks.map((link) => (
                     <li key={link.url}>
-                        <a href={link.url}>{link.name}</a>
+                        <Text tag="a" variant="paragraph1" href={link.url}>
+                            {link.name}
+                        </Text>
                     </li>
                 ))}
             </MenuWrapper.Center>
