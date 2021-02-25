@@ -11,13 +11,15 @@ interface ComponentProps {
 
 interface StyleProps {
     variant?: ButtonVariants
+    ghost?: boolean
 }
 
 const Button = ({ children, variant, ghost }: ComponentProps) => {
-    if (ghost)
-        return <GhostButtonStyle variant={variant}>{children}</GhostButtonStyle>
-
-    return <DefaultButtonStyle variant={variant}>{children}</DefaultButtonStyle>
+    return (
+        <ButtonStyle variant={variant} ghost={ghost}>
+            {children}
+        </ButtonStyle>
+    )
 }
 
 export default Button
@@ -32,37 +34,47 @@ export const ButtonStyle = styled.button<StyleProps>`
 
     border-radius: ${({ theme }) => theme.borderRadius};
 
+    color: ${({ ghost, theme }) =>
+        ghost
+            ? theme.colors.primary.main.color
+            : theme.colors.primary.main.contrastText};
+    color: ${({ ghost, variant, theme }) =>
+        ghost
+            ? variant === 'secondary' && theme.colors.secondary.main.color
+            : variant === 'secondary' &&
+              theme.colors.secondary.main.contrastText};
+    color: ${({ ghost, variant, theme }) =>
+        ghost
+            ? variant === 'tertiary' && theme.colors.tertiary.main.color
+            : variant === 'tertiary' &&
+              theme.colors.tertiary.main.contrastText};
+    color: ${({ ghost, variant, theme }) =>
+        ghost
+            ? variant === 'tertiaryLight' && theme.colors.tertiary.light.color
+            : variant === 'tertiaryLight' &&
+              theme.colors.tertiary.light.contrastText};
+
+    background: ${({ ghost, theme }) =>
+        ghost
+            ? theme.colors.primary.main.contrastText
+            : theme.colors.primary.main.color};
+    background: ${({ ghost, variant, theme }) =>
+        ghost
+            ? variant === 'secondary' &&
+              theme.colors.secondary.main.contrastText
+            : variant === 'secondary' && theme.colors.secondary.main.color};
+    background: ${({ ghost, variant, theme }) =>
+        ghost
+            ? variant === 'tertiary' && theme.colors.tertiary.main.contrastText
+            : variant === 'tertiary' && theme.colors.tertiary.main.color};
+    background: ${({ ghost, variant, theme }) =>
+        ghost
+            ? variant === 'tertiaryLight' &&
+              theme.colors.tertiary.light.contrastText
+            : variant === 'tertiaryLight' && theme.colors.tertiary.light.color};
+
     &:hover,
     &:focus {
         opacity: 0.5;
     }
-`
-export const DefaultButtonStyle = styled(ButtonStyle)`
-    color: ${({ theme }) => theme.colors.primary.main.contrastText};
-    color: ${({ variant, theme }) =>
-        variant === 'secondary' && theme.colors.secondary.main.contrastText};
-    color: ${({ variant, theme }) =>
-        variant === 'tertiary' && theme.colors.tertiary.main.contrastText};
-    color: ${({ variant, theme }) =>
-        variant === 'tertiaryLight' &&
-        theme.colors.tertiary.light.contrastText};
-
-    background: ${({ theme }) => theme.colors.primary.main.color};
-    background: ${({ variant, theme }) =>
-        variant === 'secondary' && theme.colors.secondary.main.color};
-    background: ${({ variant, theme }) =>
-        variant === 'tertiary' && theme.colors.tertiary.main.color};
-    background: ${({ variant, theme }) =>
-        variant === 'tertiaryLight' && theme.colors.tertiary.light.color};
-`
-export const GhostButtonStyle = styled(ButtonStyle)`
-    color: ${({ theme }) => theme.colors.primary.main.color};
-    color: ${({ variant, theme }) =>
-        variant === 'secondary' && theme.colors.secondary.main.color};
-    color: ${({ variant, theme }) =>
-        variant === 'tertiary' && theme.colors.tertiary.main.color};
-    color: ${({ variant, theme }) =>
-        variant === 'tertiaryLight' && theme.colors.tertiary.light.color};
-
-    background: transparent;
 `
