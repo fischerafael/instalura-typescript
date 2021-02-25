@@ -4,7 +4,6 @@ import Logo from '../Logo'
 import { MenuWrapper } from './styles'
 
 import { menuLinks } from '../../../utils/menu-links'
-import ButtonOld from '../ButtonOld'
 
 import Text from '../../foundation/Text'
 import Button from '../Button'
@@ -25,7 +24,10 @@ const Menu = () => {
                 ))}
             </MenuWrapper.Center>
             <MenuWrapper.Left>
-                <Button variant="secondary">Oi</Button>
+                <Button variant="primary" ghost>
+                    Entrar
+                </Button>
+                <Button variant="primary">Cadastrar</Button>
             </MenuWrapper.Left>
         </MenuWrapper>
     )
