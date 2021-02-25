@@ -25,7 +25,7 @@ const Menu = () => {
                 ))}
             </MenuWrapper.Center>
             <MenuWrapper.Left>
-                <Button colors="secondary">Oi</Button>
+                <Button variant="primary">Oi</Button>
             </MenuWrapper.Left>
         </MenuWrapper>
     )

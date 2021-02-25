@@ -1,20 +1,22 @@
 import React, { ReactNode } from 'react'
 import styled from 'styled-components'
 
+type Variants = 'secondary' | 'tertiary' | 'tertiaryLight'
+
 interface Props {
     children: ReactNode
-    colors?: 'primary' | 'secondary' | 'tertiary' | 'tertiaryLigth'
+    variant?: Variants
     ghost?: boolean
 }
 
-const Button = ({ children, colors }: Props) => {
-    return <ButtonStyle color="blue">{children}</ButtonStyle>
+const Button = ({ children, variant }: Props) => {
+    return <ButtonStyle variant="secondary">{children}</ButtonStyle>
 }
 
 export default Button
 
 interface StyleProps {
-    color: string
+    variant: Variants
 }
 
 export const ButtonStyle = styled.button<StyleProps>`
@@ -29,9 +31,13 @@ export const ButtonStyle = styled.button<StyleProps>`
 
     transition: 0.5s;
 
-    ${function ({ color }) {
-        return `background: ${color};`
-    }}
+    color: ${({ theme }) => theme.colors.primary.main.color};
+    color: ${({ variant, theme }) =>
+        variant === 'secondary' && theme.colors.secondary.main.color};
+    color: ${({ variant, theme }) =>
+        variant === 'tertiary' && theme.colors.tertiary.main.color};
+    color: ${({ variant, theme }) =>
+        variant === 'tertiaryLight' && theme.colors.tertiary.light.color};
 
     &:hover,
     &:focus {
