@@ -4,6 +4,7 @@ declare module 'styled-components' {
     export interface DefaultTheme {
         colors: IColors
         typographyVariants: ITypography
+        breakPoints: IBreakPoints
         borderRadius: string
         transition: string
         fontFamily: string
@@ -81,4 +82,12 @@ interface IColors {
     modes: {
         dark: object
     }
+}
+
+interface IBreakPoints {
+    xs: number
+    sm: number
+    md: number
+    lg: number
+    xl: number
 }

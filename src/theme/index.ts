@@ -72,9 +72,18 @@ export const typographyVariants = {
     }
 }
 
+export const breakPoints = {
+    xs: 0,
+    sm: 488,
+    md: 768,
+    lg: 992,
+    xl: 1200
+}
+
 export const theme = {
     colors,
     typographyVariants,
+    breakPoints,
     borderRadius: '8px',
     transition: '200ms ease-in-out',
     fontFamily: "'Rubik', sans-serif"
