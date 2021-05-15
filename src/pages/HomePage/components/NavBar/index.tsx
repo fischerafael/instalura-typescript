@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 import { ImageDisplay } from '../../../../components/design/Display'
 import {
     GhostButtonInput,
@@ -29,18 +30,6 @@ export const NavBar = () => {
                 }}
             >
                 <ImageDisplay src="/instalura-logo.svg" alt="Instalura Logo" />
-                <FlexLayout
-                    as="nav"
-                    style={{
-                        width: '100%',
-                        height: '100%',
-                        gap: '2rem',
-                        justifyContent: 'flex-start'
-                    }}
-                >
-                    <AnchorNavigation>Home</AnchorNavigation>
-                    <AnchorNavigation>Sobre</AnchorNavigation>
-                </FlexLayout>
                 <FlexLayout
                     style={{
                         width: '100%',
