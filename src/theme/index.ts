@@ -73,11 +73,11 @@ export const typographyVariants = {
 }
 
 export const breakPoints = {
-    xs: 0,
-    sm: 488,
-    md: 768,
-    lg: 992,
-    xl: 1200
+    xs: '0px',
+    sm: '488px',
+    md: '768px',
+    lg: '992px',
+    xl: '1200px'
 }
 
 export const theme = {

@@ -85,9 +85,9 @@ interface IColors {
 }
 
 interface IBreakPoints {
-    xs: number
-    sm: number
-    md: number
-    lg: number
-    xl: number
+    xs: string
+    sm: string
+    md: string
+    lg: string
+    xl: string
 }
