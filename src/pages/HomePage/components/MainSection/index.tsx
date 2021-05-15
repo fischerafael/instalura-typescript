@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 import { MainButtonInput } from '../../../../components/design/Input'
 import { FlexLayout } from '../../../../components/design/Layout'
 import { SubTitle, Title } from '../../../../components/design/Typography'
@@ -16,18 +17,7 @@ export const MainSection = () => {
                 gap: '1rem'
             }}
         >
-            <Title
-                style={{
-                    fontSize: '7rem',
-                    WebkitTextStroke: `3px ${theme.colors.primary}`,
-                    WebkitTextFillColor: 'transparent',
-                    textShadow: `0 0 30px rgba(97, 219, 251, 0.55)`,
-                    lineHeight: '10rem',
-                    margin: '0'
-                }}
-            >
-                INSTALURA
-            </Title>
+            <ResponsiveTitle>INSTALURA</ResponsiveTitle>
             <SubTitle
                 style={{
                     color: `${theme.colors.main}`,
@@ -46,3 +36,21 @@ export const MainSection = () => {
         </FlexLayout>
     )
 }
+
+const ResponsiveTitle = styled(Title)`
+    font-size: 7rem;
+    color: ${(props) => props.theme.colors.primary};
+    -webkit-text-stroke: 3px;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(97, 219, 251, 0.55);
+    line-height: 10rem;
+    margin: 0;
+    @media (max-width: 900px) {
+        -webkit-text-stroke: 2px;
+        font-size: 5rem;
+    }
+    @media (max-width: 600px) {
+        -webkit-text-stroke: 1px;
+        font-size: 3.5rem;
+    }
+`

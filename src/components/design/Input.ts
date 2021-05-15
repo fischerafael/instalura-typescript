@@ -7,6 +7,7 @@ const DefaultButton = styled.button`
     align-items: center;
     justify-content: center;
 
+    font-size: 0.75rem;
     font-weight: bold;
 
     padding: 0 2rem;

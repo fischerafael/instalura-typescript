@@ -25,11 +25,15 @@ export const NavBar = () => {
                     width: '100%',
                     height: '100%',
                     maxWidth: '60rem',
-                    gap: '3rem',
+                    gap: '1rem',
                     justifyContent: 'space-between'
                 }}
             >
-                <ImageDisplay src="/instalura-logo.svg" alt="Instalura Logo" />
+                <ImageDisplay
+                    style={{ maxWidth: '7rem' }}
+                    src="/instalura-logo.svg"
+                    alt="Instalura Logo"
+                />
                 <FlexLayout
                     style={{
                         width: '100%',

@@ -15,5 +15,11 @@ const resetCSS = css`
         outline: 0;
         font-family: Arial, Helvetica, sans-serif;
         font-size: 16px;
+        @media (max-width: 900px) {
+            font-size: 95%;
+        }
+        @media (max-width: 600px) {
+            font-size: 90%;
+        }
     }
 `
