@@ -3,6 +3,9 @@ import 'styled-components'
 declare module 'styled-components' {
     export interface DefaultTheme {
         colors: IColors
+        gradients: {
+            radial: string
+        }
         typographyVariants: ITypography
         breakPoints: IBreakPoints
         borderRadius: string
@@ -49,39 +52,11 @@ interface ITypography {
 }
 
 interface IColors {
-    background: {
-        light: {
-            color: string
-        }
-        main: {
-            color: string
-        }
-    }
-    primary: {
-        main: {
-            color: string
-            contrastText: string
-        }
-    }
-    secondary: {
-        main: {
-            color: string
-            contrastText: string
-        }
-    }
-    tertiary: {
-        main: {
-            color: string
-            contrastText: string
-        }
-        light: {
-            color: string
-            contrastText: string
-        }
-    }
-    modes: {
-        dark: object
-    }
+    primary: string
+    main: string
+    contrast: string
+    lightContrast: string
+    background: string
 }
 
 interface IBreakPoints {

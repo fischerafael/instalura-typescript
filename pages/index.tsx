@@ -1,3 +1,5 @@
+import { HomePage } from '../src/pages/HomePage'
+
 export default function Home() {
-    return <div>oi</div>
+    return <HomePage />
 }
